@@ -2,7 +2,11 @@
 
 import codecs
 
-from singledispatch import singledispatch
+try:  # pragma: no cover
+    from functools import singledispatch
+except ImportError:  # pragma: no cover
+    from singledispatch import singledispatch
+
 import six
 
 from httpolice import notice
